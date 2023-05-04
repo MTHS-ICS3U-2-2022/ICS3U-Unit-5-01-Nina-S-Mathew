@@ -4,27 +4,27 @@
 // Created on: April 14, 2023
 // This program does a for loop
 
+#include <stdio.h>
 
 void nauticalMiles() {
-    int nauticalMiles;
-    int kilometers;
+    float nauticalMile;
+    float kilometers;
     int ScanError = 0;
 
     printf("Enter a distance in nautical miles: ");
-    ScanError = scanf("%d", &nauticalMiles);
+    ScanError = scanf("%f", &nauticalMile);
 
     if (ScanError == 0) {
-        printf("Invalid input");
+        printf("Invalid input\n");
     } else {
-        for (kilometers = 0; kilometers <= nauticalMiles; kilometers++) {
-            printf("%d nautical miles is %d kilometers\n", kilometers,
-            kilometers * 1.852);
-        }
+        kilometers = nauticalMile * 1.85;
+        printf("\n%.0f nautical miles is %.3f km\n", nauticalMile, kilometers);
     }
+}
 
-    int main() {
+int main() {
         // Call functions
-        nauticalMiles();
-        return 0;
-    }
+    nauticalMiles();
+    printf("\nDone.\n");
+    return 0;
 }
